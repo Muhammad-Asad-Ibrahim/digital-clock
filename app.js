@@ -1,8 +1,7 @@
 var hrs = document.getElementById("hrs");
 var mins = document.getElementById("mins");
 var secs = document.getElementById("secs");
-var am = document.getElementById("am");
-var pm = document.getElementById("pm");
+var ampm = document.getElementById("ampm");
 var date = document.getElementById("date");
 function digitalClock() {
     var currentDate = new Date();
@@ -24,14 +23,7 @@ function digitalClock() {
         am_pm = "PM";
         hours = hours - 12;
     }
-    if (am_pm == "AM") {
-        am.className = "highlight";
-        pm.className = "";
-    }
-    else {
-        pm.className = "highlight";
-        am.className = "";
-    }
+    ampm.innerText = am_pm;
     hrs.innerText = hours;
     mins.innerText = minutes;
     secs.innerText = seconds;
